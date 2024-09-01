@@ -1,0 +1,16 @@
+html {
+    background-color: black;
+    font-family: 'Times New Roman';
+    color: white;
+}
+aside {
+    width: 325px;
+}
+canvas {
+    border: solid;
+    border-color: white;
+    border-width: 1px;
+    position: absolute;
+    left: 350px;
+    top: 10px;
+}

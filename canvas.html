@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Game of Life</title>
+        <link rel="stylesheet" href="canvas.css"/>
+        <script src="canvas.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Conway's game of life!</h1>
+        </header>
+
+        <main>
+            <aside>
+                <p id="status">Paused</p>
+                <label for="number">Delay between generations (ms): </label>
+                <input type="number" id="delay" value=5>
+                <br><br>
+                <label for="insert">Insert </label>
+                <select id="insert">
+                    <option value="0">Gosper glider gun</option>
+                    <option value="1">Twin glider gun</option>
+                    <option value="2">Twin Single glider gun</option>
+                    <option value="3">Twin head (left)</option>
+                    <option value="4">Arrowhead (left)</option>
+                    <option value="5">Twin head (right)</option>
+                    <option value="6">Arrowhead (right)</option>
+                    <option value="7">Medium spaceship</option>
+                    <option value="8">Small spaceship</option>
+                </select>
+                <label for="insert">On press p</label>
+                <br><br>
+                <button id="rotate">Rotate insert clockwise</button><br><br>
+                <button id="flipX">Flip around x</button><br><br>
+                <button id="flipY">Flip around y</button>
+            </aside>
+            <canvas height="750" width="750" id="renderScreen">Uh-Oh! The Canvas was not able to be displayed!</canvas>
+        </main>
+    </body>
+</html>
