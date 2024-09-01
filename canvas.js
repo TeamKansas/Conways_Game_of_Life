@@ -13,6 +13,8 @@ const XM = X - 1;
 const YM = Y - 1;
 const WID = canvas.width;
 const HEI = canvas.length;
+const leftCanvas = canvas.getBoundingClientRect().left;
+const topCanvas = canvas.getBoundingClientRect().top;
 
 var playing = false;
 var delay = 5;
@@ -112,7 +114,7 @@ var interval = setInterval(updateAll, delay);
 
 document.addEventListener("keydown", function(event) {
     switch(event.key) {
-        case ' ':
+        case ' ': case ',':
             if(playing) {
                 playing = false;
                 document.getElementById("status").textContent = "Paused";
@@ -247,16 +249,16 @@ canvas.addEventListener("click", function(event) {
     var clickX = event.clientX;
     var clickY = event.clientY;
     if(event.shiftKey) {
-        clickX = Math.floor(((clickX - 350) / 750) * X - X/2);
-        clickY = Math.floor(((clickY - 10) / 750) * Y - Y/2);
+        clickX = Math.floor(((clickX - leftCanvas) / 750) * X - X/2);
+        clickY = Math.floor(((clickY - topCanvas) / 750) * Y - Y/2);
         for(var i = shapes[currentShape].length - 2; i >= 0; i -= 2) {
             shapes[currentShape][i] = (shapes[currentShape][i] + clickX + X)%X;
             shapes[currentShape][i + 1] = (shapes[currentShape][i + 1] + clickY + Y)%Y;
         }
     }
     else {
-        clickX = Math.floor(((clickX - 350) / 750) * X);
-        clickY = Math.floor(((clickY - 10) / 750) * Y);
+        clickX = Math.floor(((clickX - leftCanvas) / 750) * X);
+        clickY = Math.floor(((clickY - topCanvas) / 750) * Y);
         cursor = [clickX, clickY];
     }
     updateScreen();
