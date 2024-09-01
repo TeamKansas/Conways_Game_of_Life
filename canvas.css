@@ -5,15 +5,15 @@ html {
 }
 aside {
     position: relative;
-    width: 325px;
+    width: 22%;
 }
 canvas {
     border: solid;
     border-color: white;
     border-width: 1px;
     position: absolute;
-    left: 350px;
-    top: 10px;
+    left: 24%;
+    top: 1%;
 }
 .instructions {
     position: absolute;
