@@ -4,6 +4,7 @@ html {
     color: white;
 }
 aside {
+    position: relative;
     width: 325px;
 }
 canvas {
@@ -13,4 +14,10 @@ canvas {
     position: absolute;
     left: 350px;
     top: 10px;
+}
+.instructions {
+    position: absolute;
+    left: 78%;
+    top: 5%;
+    width: 18%;
 }
